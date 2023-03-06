@@ -1,16 +1,20 @@
+import jdk.internal.access.JavaLangInvokeAccess;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        // Create centers
-        TuitionCenter center1 = new TuitionCenter("TuitionCenter 1");
-        TuitionCenter center2 = new TuitionCenter("TuitionCenter 2");
-
-        // Create tutors
         Tutor tutor1 = new Tutor("John Doe", "1234567", "123 Main St", "PhD", 10, new Date(), 5);
         Tutor tutor2 = new Tutor("Jane Smith", "7654321", "456 Oak St", "Master's", 5, new Date(), 3);
+
+        HeadMaster head1 =  new HeadMaster("Dumbledore", "6789234", "789 Head St", 45);
+        HeadMaster head2 =  new HeadMaster("Miyuki", "01285678", "012 Love St", 54);
+
+
+        TuitionCenter center1 = new TuitionCenter("TuitionCenter 1", "123 Main St", head1.getName());
+        TuitionCenter center2 = new TuitionCenter("TuitionCenter 2", "456 Oak St", head2.getName());
 
         // Add tutors to centers
         center1.addTutor(tutor1);
